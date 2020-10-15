@@ -1,0 +1,1239 @@
+@font-face {
+  font-family: Mulir;
+  src: url("./font/Muli-Regular.ttf");
+}
+@font-face {
+  font-family: Mulil;
+  src: url("./font/Muli-Light.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f4ed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Header section */
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+#header .header {
+  min-height: 8vh;
+  background-color: transparent;
+  transition: 0.3s ease background-color;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+  padding-right: 150px;
+  background-color: transparent;
+  /* opacity: 80%; */
+}
+
+#header .nav-bar .brand {
+  margin-top: 17px auto auto auto;
+  margin-left: 5.6%;
+  height: 50px;
+  width: 35px;
+  object-fit: cover;
+}
+
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: #f8f4ed;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+#header .nav-list ul.active {
+  left: 0%;
+}
+#header .nav-list ul li {
+  list-style: none;
+  display: block;
+  position: relative;
+  padding: 28;
+}
+
+#header .nav-list ul li:hover:after {
+  transform: translateX(-50%) scale(1);
+}
+#header .nav-list ul li:after {
+  content: "";
+  position: absolute;
+  width: 68px;
+  height: 3.5px;
+  background-color: #278056;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  bottom: 0;
+  margin-bottom: 8px;
+  transition: 0.3s ease transform;
+}
+/* try */
+#header .nav-list ul a {
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-decoration: none;
+  color: #3e5257;
+  padding: 20px;
+  display: block;
+}
+
+#header .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #fdfbf9;
+  font-size: 13rem;
+  letter-spacing: 0.15rem;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+  color: #278056;
+}
+
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+  /* transform: scale(0.8); */
+  margin-right: 20px;
+}
+
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: relative;
+  background-color: black;
+  z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-color: black;
+  transition: 0.3s ease;
+  transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+  top: 8px;
+}
+
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+
+#header .hamburger.active .bar::before {
+  bottom: 0;
+}
+
+#header .hamburger.active .bar::after {
+  top: 0;
+}
+
+/* End Header section */
+
+/* Hero Section */
+
+#hero .hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#hero .hero {
+  width: 100%;
+  text-align: center;
+}
+#hero .hero .hero-info-heading {
+  font-family: Cormorant Garamond;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 85px;
+  text-align: center;
+  color: #3e5257;
+  margin-bottom: 25px;
+}
+
+#hero .hero .hero-info-heading span {
+  color: #1d292d;
+  font-weight: 600;
+}
+
+#hero .hero .hero-info-subheading {
+  width: 90%;
+  font-family: Mulil;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #3e5257;
+  margin-bottom: 58px;
+}
+
+#hero .btns {
+  display: flex;
+  justify-content: center;
+
+  /* margin: 58px auto 0;
+ display: inline-block; */
+}
+
+#hero .hero .hero-btns {
+  margin-top: 30px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: Mulir;
+}
+
+#hero .hero .hero-btns .contact {
+  color: #ffffff;
+  background-color: #278056;
+  padding: 13px 23px 14px 24px;
+  margin-right: 22px;
+  /* height: 48px;
+  width: 136px; */
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+
+#hero .hero .hero-btns .contact:hover {
+  background-color: #3e5257;
+  color: #ffffff;
+}
+#hero .hero .hero-btns .resume {
+  padding: 10px 35px 10px 35px;
+  background-color: #f8f4ed;
+  border: #278056 solid 2px;
+  color: #278056;
+  margin-left: 22px;
+  /* height: 46px;
+  width: 134px; */
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  transition: 0.3s ease;
+  transition-property: background-color, color, border;
+}
+
+#hero .hero .hero-btns .resume:hover {
+  background-color: #3e5257;
+  color: #ffffff;
+  border: #3e5257 solid 2px;
+}
+
+/* End of Hero section */
+
+/* start of portfolio section  */
+
+#portfolio .portfolio {
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+#portfolio .portfolio .portfolio-header {
+  max-width: 1040px;
+}
+
+.portfolio .portfolio-info-heading {
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #3b3b3b;
+  margin-bottom: 12px;
+}
+.portfolio .portfolio-info-description {
+  font-family: Mulil;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 37px;
+  color: #6d6d6d;
+  margin-bottom: 44px;
+}
+
+.portfolio .portfolio-info-description a {
+  color: #278056;
+}
+
+.portfolio .portfolio-info-description a:hover {
+  text-decoration: underline;
+}
+
+.portfolio .portfolio-info-description a span {
+  font-size: 30px;
+}
+
+.portfolio .home-cards {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  grid-template-columns: 461px 461px;
+  grid-template-rows: 625px 625px;
+  column-gap: 121px;
+  row-gap: 126px;
+}
+
+.portfolio .home-cards .home-card {
+  padding-top: 0cm;
+}
+
+/* .portfolio .home-cards .home-card-even {
+  padding-top: 300px;
+} */
+
+.portfolio .home-cards-img {
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.portfolio .home-cards-img img {
+  transition: 0.3s ease transform;
+}
+.portfolio .home-cards-img img:hover {
+  transform: scale(1.09);
+}
+
+.portfolio .home-cards .portfolio-heading {
+  margin-bottom: 5px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25.84px;
+  /* line-height: 37px; */
+  color: #1d292d;
+}
+
+.portfolio .home-cards .portfolio-heading span {
+  font-size: 19.38px;
+}
+
+.portfolio .home-cards .portfolio-detail {
+  margin-bottom: 28px;
+  font-family: Mulil;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3e5257;
+}
+
+.portfolio .home-cards .read-more {
+  padding: 13px 20px 13px 20px;
+  background-color: #f8f4ed;
+  border: #278056 solid 2px;
+  color: #278056;
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  transition: 0.3s ease;
+  transition-property: background-color, color, border;
+}
+
+.portfolio .home-cards .read-more:hover {
+  background-color: #278056;
+  color: #ffffff;
+  border: #278056 solid 2px;
+}
+
+/* End of Portfolio Section  */
+
+/* dribble button */
+
+.dribbble-button {
+  /* min-height: 30vh; */
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-top: 172px; */
+}
+
+.dribbble-button h2 {
+  font-family: Cormorant Garamond;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 15.5%;
+}
+.dribbble-button a {
+  margin-top: 36px;
+  padding: 13px 43px 13px 43px;
+  background-color: #f8f4ed;
+  border: #278056 solid 2px;
+  color: #278056;
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  transition: 0.3s ease;
+  transition-property: background-color, color, border;
+  margin-left: 15.5%;
+}
+
+.dribbble-button a:hover {
+  background-color: #278056;
+  color: #ffffff;
+  border: #278056 solid 2px;
+}
+
+/* end of dribble button */
+
+/* About */
+#about .about {
+  flex-direction: row;
+}
+#about .col-left {
+  width: 712px;
+  height: auto;
+}
+
+#about .col-left h2 {
+  font-family: Cormorant Garamond;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 54px;
+  color: #1d292d;
+  margin-bottom: 16px;
+}
+
+#about .col-left .resumedownload {
+  display: inline-block;
+  padding: 13px 23px;
+  color: #278056;
+  background-color: #f8f4ed;
+  border: 2px solid;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+  font-family: Mulil;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 48px;
+}
+
+#about .resumedownload:hover {
+  color: #ffffff;
+  background-color: #278056;
+}
+
+#about .col-left p {
+  font-family: Mulil;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3e5257;
+}
+
+#about .col-right {
+  margin-left: 36px;
+  padding-bottom: 70px;
+}
+
+#about .about-description {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#about .about-description .description {
+  font-family: Mulil;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 34px;
+  letter-spacing: 0em;
+  max-width: 982px;
+  color: #3e5257;
+  margin-left: 235px;
+}
+
+#about .about-description .description h3 {
+  font-family: Cormorant Garamond;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1d292d;
+  margin-bottom: 16px;
+}
+
+#about .about-description .description1 {
+  margin-bottom: 44px;
+}
+
+/* End About */
+
+/* Footer */
+
+#footer hr {
+  height: 2px;
+  margin: auto;
+  width: 69%;
+  /* border-width: 10px; */
+  color: #dcdcdc;
+  background-color: #dcdcdc;
+  margin-bottom: 90px;
+  margin-top: 167px;
+}
+#footer .footer {
+  min-height: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#footer .primary {
+  padding-left: 15.5%;
+  padding-right: 15.5%;
+  display: flex;
+  margin-bottom: 90px;
+  flex-direction: column;
+}
+
+#footer .primary h2 {
+  font-family: Cormorant Garamond;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 71px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1d292d;
+}
+
+#footer .primary h5 {
+  margin-top: 26px;
+  font-family: Mulil;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3e5257;
+}
+
+#footer .primary h5 a {
+  font-weight: 600;
+  color: #278056;
+  text-decoration: underline;
+}
+
+#footer .secondary {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdfbf9;
+  width: 100%;
+  height: 63px;
+  padding-left: 125px;
+  padding-right: 125px;
+}
+
+#footer .secondary p {
+  font-family: Mulil;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 100%;
+}
+
+#footer .secondary-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#footer .social-item {
+  width: max-content;
+  font-size: 26px;
+  margin: auto 12.75px;
+}
+#footer .medium {
+  color: #3d3d3d;
+}
+
+#footer .dribbble:hover {
+  color: #ea4c89;
+}
+#footer .behance:hover {
+  color: #053eff;
+}
+#footer .linkedin:hover {
+  color: #0e76a8;
+}
+#footer .medium:hover {
+  color: #000000;
+}
+
+/* End Footer */
+
+/* Media Query */
+
+/* Media Query For Desktop */
+
+@media only screen and (min-width: 1200px) {
+  /* header */
+  #header .hamburger {
+    display: none;
+  }
+
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background-color: transparent;
+  }
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    /* font-size: 1.8rem; */
+  }
+  #header .nav-list ul a:after {
+    display: none;
+  }
+  /* End header */
+}
+
+/* End  Media Query For Desktop */
+
+/* Media Query For I-Pad */
+
+@media only screen and (max-width: 1200px) and (min-width: 700px) {
+  #hero .hero .hero-info-subheading {
+    font-family: Mulil;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 100%;
+
+    margin-bottom: 40px;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+/* Media Query For Phone */
+
+@media only screen and (max-width: 900px) {
+  /* Header */
+
+  #header .nav-bar {
+    padding-right: 10px;
+  }
+
+  #header .hamburger {
+    margin: 0px;
+  }
+
+  #header .nav-bar .brand {
+    margin-top: 17px auto auto auto;
+    margin-left: 5.6%;
+    height: 31px;
+    width: auto;
+    object-fit: cover;
+  }
+  /* End of Header Section */
+
+  /* Hero Section */
+
+  #hero .hero {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 64px;
+  }
+
+  #hero .container {
+    justify-content: start;
+    min-height: 50%;
+  }
+  #hero .hero {
+    width: 100%;
+    text-align: center;
+  }
+  #hero .hero .hero-info-heading {
+    font-family: Cormorant Garamond;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+
+    /* margin-bottom: 25px;
+    margin-top:64px ; */
+    margin: 64px auto 25px auto;
+    /* min-width: 321px; */
+  }
+
+  #hero .hero .big-break {
+    display: none;
+  }
+
+  #hero .hero .hero-info-subheading {
+    font-family: Mulil;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+    width: 100%;
+
+    margin-bottom: 40px;
+    margin-left: 12%;
+    margin-right: 12%;
+  }
+
+  #hero .hero .hero-info-subheading br {
+    display: none;
+  }
+
+  #hero .hero .hero-btns {
+    margin-top: 30px;
+  }
+
+  #hero .hero .hero-btns .contact {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+
+    padding: 13px 23px 14px 24px;
+    margin-right: 8.5px;
+  }
+
+  #hero .hero .hero-btns .resume {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+
+    padding: 10px 35px 10px 35px;
+    margin-left: 8.5px;
+  }
+
+  /* End of Hero section */
+
+  /* start of portfolio section  */
+
+  #portfolio .portfolio {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 100px 0;
+  }
+
+  #portfolio .portfolio .portfolio-header {
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 44px;
+  }
+
+  .portfolio .portfolio-info-heading {
+    font-family: Cormorant Garamond;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 4px;
+  }
+
+  .portfolio .portfolio-info-description {
+    font-family: Mulil;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 0px;
+  }
+
+  .portfolio .portfolio-info-description a span {
+  font-size: 18px;
+}
+
+  .portfolio .home-cards {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 0px;
+    row-gap: 100px;
+  }
+
+  .portfolio .home-cards .home-card {
+    padding-top: 0cm;
+  }
+
+  .portfolio .home-cards .home-card-even {
+    padding-top: inherit;
+  }
+
+  .portfolio .home-cards-img {
+    margin-bottom: 18px;
+  }
+
+  .portfolio .home-cards-img img:hover {
+    transform: scale(1.09);
+  }
+
+  .portfolio .home-cards .home-cards-info {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .portfolio .home-cards .portfolio-heading {
+    margin-bottom: 5px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .portfolio .home-cards .portfolio-heading span {
+    font-size: 16px;
+  }
+
+  .portfolio .home-cards .portfolio-detail {
+    font-family: Mulil;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 28px;
+  }
+
+  .portfolio .home-cards .read-more {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    padding: 13px 20px 13px 20px;
+  }
+
+  /* End of Portfolio Section  */
+
+  /* About */
+  #about .about {
+    flex-direction: column;
+    margin-top: 120px;
+  }
+  #about .col-left {
+    width: auto;
+    height: auto;
+    margin: 0 16px;
+  }
+
+  #about .col-left h2 {
+    font-family: Cormorant Garamond;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 16px;
+  }
+
+  #about .col-left p {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  #about .col-left .resumedownload {
+    display: inline-block;
+    padding: 13px 23px;
+    color: #278056;
+    background-color: #f8f4ed;
+    border: 2px solid;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-top: 44px;
+    margin-bottom: 84px;
+  }
+
+  #about .resumedownload:hover {
+    color: #ffffff;
+    background-color: #278056;
+  }
+
+  #about .col-right {
+    margin: 0;
+    width: 100%;
+
+    padding-bottom: 0px;
+  }
+
+  #about .col-right .about-img {
+    max-width: 414px;
+    margin: auto;
+  }
+
+  #about .about-description {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    width: 100%;
+    margin-top: 44px;
+    /* margin-left: 16px;
+    margin-right: 16px; */
+  }
+
+  #about .about-description .description {
+    font-family: Mulil;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    max-width: 982px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  #about .about-description .description h3 {
+    font-family: Cormorant Garamond;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-bottom: 12px;
+  }
+
+  #about .about-description .description1 {
+    margin-bottom: 44px;
+  }
+
+  /* End About */
+
+  /* dribble button */
+
+  .dribbble-button {
+    /* min-height: 30vh; */
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-top: 172px; */
+  }
+
+  .dribbble-button h2 {
+    font-family: Cormorant Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 15.5%;
+  }
+  .dribbble-button a {
+    margin-top: 36px;
+    padding: 13px 43px 13px 43px;
+    background-color: #f8f4ed;
+    border: #278056 solid 2px;
+    color: #278056;
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+    transition: 0.3s ease;
+    transition-property: background-color, color, border;
+    margin-left: 15.5%;
+  }
+
+  /* Footer */
+
+  #footer hr {
+    height: 1px;
+    margin: auto;
+    width: 75%;
+
+    margin-bottom: 64px;
+    margin-top: 67px;
+  }
+
+  #footer .footer {
+    min-height: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    align-items: center;
+  }
+
+  #footer .primary {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    margin-bottom: 64px;
+    flex-direction: column;
+  }
+
+  #footer .primary h2 {
+    font-family: Cormorant Garamond;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  #footer .primary h5 {
+    font-family: Mulil;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    margin-top: 26px;
+  }
+
+  #footer .primary h5 a {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  #footer .secondary {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fdfbf9;
+    width: 100%;
+    height: 201px;
+    padding-left: 125px;
+    padding-right: 125px;
+  }
+
+  #footer .secondary p {
+    font-family: Mulil;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    min-width: 297px;
+    margin-top: 40px;
+  }
+
+  #footer .secondary-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #footer .social-item {
+    width: max-content;
+    font-size: 30px;
+    margin: auto 12.75px;
+  }
+
+  /* End Footer */
+}
+
+/* All animations */
+
+@keyframes yourAnimation {
+  0% {
+    transform: rotate(0) translateY(-40%);
+    opacity: 0.5;
+  }
+  99% {
+    transform: rotate(xx) translateY(0);
+  }
+  100% {
+    transform: rotate(xx) translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-info-heading {
+  animation: yourAnimation 0.5s forwards 0s ease-out;
+}
+
+body {
+  background-image: url(./images/background.png);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
